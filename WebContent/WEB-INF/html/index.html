@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+		<title>Scurto Finance & Patrimoine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="Scurto frédéric finance et patrimoine" />
+		<meta name="keywords" content="scurto, retraite, madelin, assurance, assurance-vie, prévoyance, patrimoine, perp" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Lobster&amp;display=swap" rel="stylesheet">
+	</head>
+	<body class="is-preload">
+		<!-- Header -->
+		<header id="header">
+			<a class="logo" href="index.html">Scurto Finance <span class="and">&</span> Patrimoine</a>
+			<nav>
+				<a href="#menu">Menu</a>
+				<!-- <span><img class="logo-connexion" src="icon/account.png"></span> -->
+			</nav>
+		</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li class="active"><a href="index.html">Accueil</a></li>
+				<li id="professionnel">
+					<a href="professionnels.html">Professionnels</a>
+					<div class="submenu">
+						<ul class="links">
+							<li><a href="construction.html">Protection de l'activité</a></li>
+							<li><a href="construction.html">Protection du dirigeant</a></li>
+							<li><a href="construction.html">Protection par domaine d'activité</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="entreprises.html">Entreprises</a>
+					<div class="submenu">
+						<ul class="links">
+							<li><a href="construction.html">Protection de l'activité</a></li>
+							<li><a href="construction.html">Protection des salariés</a></li>
+							<li><a href="construction.html">Protection du dirigeant</a></li>
+							<li><a href="construction.html">Protection par domaine d'activité</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="construction.html">Particuliers</a></li>
+				<li><a href="construction.html">Actualités</a></li>
+				<li><a href="liens-utiles.html">Liens utiles</a></li>
+			</ul>
+		</nav>
+
+		<!-- Banner -->
+		<div class="inner banner-carousel">
+			<div id="carouselBannerIndicators" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselBannerIndicators" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselBannerIndicators" data-slide-to="1"></li>
+					<li data-target="#carouselBannerIndicators" data-slide-to="2"></li>
+					<li data-target="#carouselBannerIndicators" data-slide-to="3"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<section class="banner" id="banner1">
+							<div class="inner">
+								<h1>Nouvelles réformes, P E R</h1>
+								<p>Renseignez vous!</p>
+
+							</div>
+						</section>
+					</div>
+					<div class="carousel-item">
+						<section class="banner" id="banner2">
+							<div class="inner">
+								<h1>Loi Pacte</h1>
+								<p>Ce que prévoit le décret d'application sur l'assurance-vie.</p>
+							</div>
+						</section>
+					</div>
+					<div class="carousel-item">
+						<section class="banner" id="banner3">
+							<div class="inner">
+								<h1>Epargne retraite Madelin</h1>
+								<p>Moins d'impôts aujourd'hui, plus de retraite demain !</p>
+							</div>
+						</section>
+					</div>
+					<div class="carousel-item">
+						<section class="banner" id="banner4">
+							<div class="inner">
+								<h1>Nouvelles réformes P E R</h1>
+								<p>Renseignez vous!</p>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- Highlights -->
+		<section class="wrapper">
+			<div class="inner">
+				<header class="special">
+					<h2>Nos services</h2>
+					<hr class="trans--grow"/>
+					<p class=max-size>Chefs d'entreprises, Artisans , Commerçants, Professions Libérales ...
+						Les meilleures solutions adaptées à votre activité et vos besoins avec des cotisations spécialement
+						conçues pour vous.</p>
+				</header>
+				<div class="highlights">
+					<section>
+						<div id="professionnels" onclick="redirect(this);" class="content">
+							<header>
+								<img class="selection-services" alt="Professionnels assurances" src="images/professionnel.jpg"/>
+							</header>
+							<div class="body-cards" >
+								<h3>Professionnels</h3>
+								<hr/>
+								<p style="text-align: center;">Nous vous proposons des solutions adaptees aux spécificités de votre activité en tenant compte votre situation personnelle. La bonne marche de votre entreprise dépend essentiellement de votre protection sociale.</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div id="entreprises" onclick="redirect(this);" class="content">
+							<header>
+								<img class="selection-services" alt="Chef d'entreprise" src="images/entreprise.jpg"/>
+							</header>
+							<div class="body-cards">
+								<h3>Entreprises</h3>
+								<hr/>
+								<p style="text-align: center;">Un certain nombre d'obligations vous incombe en tant que chef d'entreprise.
+								<br/>Nous vous accompagnons sur la partie sociale et l'optimisation fiscale de votre entreprise.
+								</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div id="construction" onclick="redirect(this);" class="content">
+							<header>
+								<img class="selection-services" alt="contrats d'assurance" src="images/retraite.jpeg"/>
+							</header>
+							<div class="body-cards">
+								<h3>Particuliers</h3>
+								<hr/>
+								<p style="text-align: center;">Chaque situation nécessite des solutions particulières pour sécuriser votre patrimoine personnel et vos proches.</p>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="cta wrapper">
+			<div>
+				<h2>" Plus qu’une sensation d’être protégé "</h2>
+			</div>
+		</section>
+
+		<!-- Vos Projets -->
+		<section class="wrapper">
+			<div style="width:80%;margin:auto;" class="inner">
+				<header class="special">
+					<h2>Au service de vos projets</h2>
+					<hr class="trans--grow"/>
+					
+				</header>
+				<div class="vos-projet">
+					<section class="img-hover-zoom expert">
+						<div class="container-projet text-projet">
+							<header><h3>Une équipe pour vous accompagner</h3></header>
+							<hr/>
+							<p>Spécialistes dans les domaines de la prévoyance, de la santé, de la dépendance, du patrimonial, de l’épargne-retraite et de l’entreprise, nous mettons nos connaissances  au service de la réalisation de vos projets.
+								Nous nous appuyons sur un réseau d’expertise comptant des acteurs tels que Drouot Estate, SOGAREP, Juridica, AXA Gestion Privée ou encore la prestigieuse association d’assurés qu’est l’AGIPI.
+								</p>
+						</div>
+						<div class="container-projet image-projet max-size">
+							<img alt="Calatayud Sander" src="images/equipe3.jpg"/>
+						</div>
+					</section>
+					<section class="img-hover-zoom expert" style="margin-top:30px;">
+						<div class="container-projet text-projet">
+							<header><h3>Des experts pour vous conseiller</h3></header>
+							<hr/>
+							<p>Demandez votre Bilan qui vous permettra de connaître précisement votre situation actuelle"Sociale et Patrimoniale".
+									Comme eux, vous pourrez alors prendre les bonnes décisions pour sécuriser votre Entreprise et protéger votre Famille.
+									Votre Protection, votre Avenir, votre Réussite : cela nous concerne, c'est  notre métier.
+									100 % de nos clients sont satisfaits du service que nous leur apportons et de notre présence à leur côté, au quotidien et dans chaque difficulté..</p>
+						</div>
+						<div class="container-projet image-projet max-size">
+								<img alt="Assureur Scurto Frédéric" src="images/equipe1.jpg"/>
+						</div>
+					</section>
+					<section class="img-hover-zoom expert" style="margin-top:30px;">
+						<div class="container-projet text-projet">
+							<header><h3>Une relation humaine</h3></header>
+							<hr/>
+							<p>Nous vous devons honnêteté, intégrité, loyauté et confidentialité. Vous nous confiez des pans entiers de votre vie, de celle de vos proches ainsi que le fruit de votre travail.
+								Nous sommes des professionnels indépendants soucieux de vous délivrer une analyse globale répondant précisément à vos besoins.</p>
+						</div>
+						<div class="container-projet image-projet max-size" >
+							<img onmouseout="defilImg()" id="defil-img" alt="Partenaire Scurto Finance et Patrimoine" src="images/equipe2.jpg"/>
+						</div>
+					</section>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="cta wrapper">
+			<div class="inner">
+				<h2>" Seul dans le passé ensemble dans le futur "</h2>
+			</div>
+		</section>
+
+		<!-- Testimonials -->
+		<section class="wrapper">
+			<div class="inner">
+				<header class="special">
+					<h2>Vous nous faites confiance</h2>
+					<hr/>
+					<p class="max-size">Nous nous impliquons au quotidien et dans la durée pour vous et votre avenir, afin de vous apporter pleinement satisfaction.</p>
+				</header>
+				<div class="testimonials">
+					<section>
+						<div class="content">
+							<blockquote>
+								<p>Je recommande Frédéric pour son sérieux professionnel. Frédéric est une personne très réactive et de confiance.</p>
+							</blockquote>
+							<div class="author">
+								<div class="image">
+									<a href="https://www.lhms.fr/"><img src="images/partenaires/LHMS.png" alt="societe LHMS" /></a>
+								</div>
+								<p class="credit">- <strong>Philippe LEONETTI</strong><span> - LHMS</span></p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="content">
+							<blockquote>
+								<p>Cabinet  humain et à l'écoute. Des personnes trés présentes pour leurs clients.
+										Surprise par la qualité du service qu'ils m'ont rendu. 
+										Je recommande !</p>
+							</blockquote>
+							<div class="author">
+								<div class="image">
+									<img src="images/partenaires/unknown_icon.png" alt="icon client" />
+								</div>
+								<div>
+								<p class="credit">- <strong>Aude EUSEBI</strong></p>
+								</div>
+							</div>
+						</div>
+					</section>	
+					<section>
+						<div class="content">
+							<blockquote>
+								<p>J'ai la chance de connaitre M SCURTO depuis des années et je dois dire que je n'ai jamais connu quelqu'un de plus humain et plus professionnel que lui. Dans le monde des assurances, nous avons souvent tendance à nous méfier et bien sachez qu'avec M SCURTO vous pouvez y aller les yeux fermés. Vous serez toujours bien conseillé et les produits proposés sont réellement en phase avec vos besoins.</p>
+							</blockquote>
+							<div class="author">
+								<div class="image">
+									<img src="images/partenaires/unknown_icon.png" alt="icon client" />
+								</div>
+								<p class="credit">- <strong>Christophe DONATI</strong></p>
+							</div>
+						</div>
+					</section>
+				</div>
+				<section class="partenaire">
+					<header><h4>Nos partenaires</h4></header>
+					<div class="container-logo-partenaire">
+						<div class="box-partenaire"><img class="d-block w-100" src="images/partenaires/agipi.png" alt="agipi"></div>
+						<div class="box-partenaire"><img class="d-block w-100" src="images/partenaires/aprs.png" alt="aprs"></div>	
+						<div class="box-partenaire"><img class="d-block w-100" src="images/partenaires/axa.jpg" alt="axa"></div>
+						<div class="box-partenaire"><img class="d-block w-100" src="images/partenaires/LHMS.png" alt="lhms"></div>
+					</div>
+				</section>
+			</div>
+		</section>
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="content">
+					<section>
+						<h4>L'ENTREPRISE</h4>
+						<br/>
+						<ul class="alt">
+							<li><a href="presentation.html">Qui sommes nous?</a></li>
+							<li><a href="presentation.html#equipe">Notre equipe</a></li>
+							<li><a href="presentation.html#bureaux">Nos bureaux</a></li>
+							<li><a href="construction.html">Devenez partenaires</a></li>
+						</ul>
+					</section>
+					<section>
+						<h4>A PROPOS</h4>
+						<br/>
+						<ul class="alt">
+							<li><a href="construction.html">Plan de site</a></li>
+							<li><a href="mention_legales.html">Mentions légales</a></li>
+							<li><a href="construction.html">Informations supplémentaires</a></li>
+							<li><a href="construction.html">Activités</a></li>
+						</ul>
+					</section>
+					<section>
+						<h4>SUIVEZ-NOUS</h4>
+						<br/>
+						<ul class="plain">
+							<!-- <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li> -->
+							<li><a href="https://www.facebook.com/profile.php?id=100014339559445"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+							<!-- <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li> -->
+							<li><a href="https://fr.linkedin.com/in/fr%C3%A9d%C3%A9ric-scurto-015486115"><i class="icon fa-linkedin">&nbsp;</i>LinkedIn</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="copyright">
+						<p>&copy; Scurto Finance & Patrimoine</p>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Scripts -->
+		<script>
+			function redirect(elt){
+				var idStr = elt.id;
+				window.location.href = idStr+".html";
+			}
+		</script>
+		<script>
+			current_img = 0;
+			arrImg = ['images/equipe2.jpg','images/equipe4.jpg','images/equipe5.jpg', 'images/equipe6.jpg', 'images/equipe7.jpg']
+				
+				
+			function defilImg(){
+				if(current_img == arrImg.length)
+				current_img = 0;
+				document.getElementById('defil-img').src = arrImg[current_img++];
+			}
+		</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
