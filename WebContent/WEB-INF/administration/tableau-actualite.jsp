@@ -18,10 +18,12 @@
 				<th scope="row"><c:out value="${actu.date}" /></th>
 				<td><c:out value="${actu.titre}" /></td>
 				<td><c:out value="${actu.titreAccueil}" /></td>
-				<td><button data-toggle="modal" data-target="#actu-${actu.id}"
+				<td>
+					<button data-toggle="modal" data-target="#actu-${actu.id}"
 						style="box-shadow: none !important;">
 						<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-					</button></td>
+					</button>
+				</td>
 				<td>
 					<button id="del-${actu.id}" onclick="removeActu(this);" style="box-shadow: none !important;">
 						<i class="fa fa-close"></i>
@@ -52,6 +54,23 @@
 								<label for="sous-titre-${actu.id}">Sous-titre accueil</label>
 								<textarea id="text-actus-${actu.id}" name="text-actus-${actu.id}" rows="10" maxlength="600" class="form-control md-textarea"><c:out value="${actu.text}"/></textarea>
 			                    <label for="text-actus-${actu.id}">Text ( 600 caractères maximum )</label>
+			                	<div style="display:flex; padding:20px;" >
+			                		<input id="visibility-${actu.id}" style="-webkit-appearance: checkbox;opacity:1;" type="checkbox"/>
+			                		<label for="visibility-${actu.id}">Visible sur l'accueil</label>		             
+			                	</div>
+		                		<div>
+			                		<select name="" id="place-${actu.id}">
+			                		<c:set var="nb" value="0"/>
+		                			<c:forEach var="actu_accueil" items="${actus_accueil}">
+				                		<c:set var="select" value=""/>
+			                			<c:set var="nb" value="${nb + 1}"/>
+		                				<c:if test="${ actu.placement == nb }">
+		                					<c:set var="select" value="selected"/>
+		                				</c:if>
+								           <option value="${ nb }" ${select}><c:out value="${nb}"/></option>
+							           </c:forEach>
+							       </select>
+		                		</div>
 			                </form>
 						</div>
 						<div class="modal-footer" style="display:flex;">

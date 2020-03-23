@@ -79,6 +79,10 @@
 		</div>
 	</div>
 	<script>
+	document.addEventListener("DOMContentLoaded", function(event) { 
+			reloadActu();
+	});
+
 	function addActu(obj) {
 		var type = $(obj).attr('id');
 		console.log(type);
@@ -186,6 +190,7 @@
 	}
 	
 	function reloadActu(){
+		console.log("");
 		var search =  document.getElementById('recherche').value;	
 		setTimeout(function(){
 	   		$('#table').load("modification-actu?search="+search);
@@ -193,7 +198,6 @@
 	}
 
 	</script>
-	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
@@ -208,5 +212,6 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+	<!-- Scripts -->
 </body>
 </html>

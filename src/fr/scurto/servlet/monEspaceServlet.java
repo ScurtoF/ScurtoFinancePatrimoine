@@ -34,7 +34,6 @@ public class monEspaceServlet extends HttpServlet {
             throws ServletException, IOException {
         System.out.println( "dans la servlet mon espace perso" );
         request.setAttribute( TITRE, "Gestions des actualités" );
-        request.setAttribute( LIST_ACTUS, actusDao.getActusAccueil() );
         this.getServletContext().getRequestDispatcher( MON_ESPACE ).forward( request, response );
     }
 

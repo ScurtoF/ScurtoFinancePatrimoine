@@ -8,6 +8,7 @@ public class Actus {
     private String date;
     private String text;
     private User   userCreate;
+    private int    placement;
 
     public int getId() {
         return id;
@@ -57,10 +58,18 @@ public class Actus {
         this.userCreate = userCreate;
     }
 
+    public int getPlacement() {
+        return placement;
+    }
+
+    public void setPlacement( int placement ) {
+        this.placement = placement;
+    }
+
     @Override
     public String toString() {
         return "Actus [titre=" + titre + ", titreAccueil=" + titreAccueil + ", date=" + date + ", text=" + text
-                + ", userCreate=" + userCreate + "]";
+                + ", userCreate=" + userCreate + ", placement= " + placement + "]";
     }
 
 }

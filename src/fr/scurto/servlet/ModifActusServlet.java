@@ -21,17 +21,18 @@ import fr.scurto.dao.imp.ActusDao;
  */
 @WebServlet( "/modification-actu" )
 public class ModifActusServlet extends HttpServlet {
-    private static final long   serialVersionUID = 1L;
-    private static final String CONF_DAO_FACTORY = "daofactory";
+    private static final long   serialVersionUID   = 1L;
+    private static final String CONF_DAO_FACTORY   = "daofactory";
 
-    private static final String TABLEAU_ACTU     = "/WEB-INF/administration/tableau-actualite.jsp";
-    private static final String LIST_ACTUS       = "actus";
+    private static final String TABLEAU_ACTU       = "/WEB-INF/administration/tableau-actualite.jsp";
+    private static final String LIST_ACTUS         = "actus";
+    private static final String LIST_ACTUS_ACCUEIL = "actus_accueil";
 
-    private static final String ATT_ID           = "idActu";
-    private static final String ATT_TITRE        = "titre";
-    private static final String ATT_SOUS_TITRE   = "sousTitre";
-    private static final String ATT_TEXT         = "textActu";
-    private static final String ATT_TYPE         = "type";
+    private static final String ATT_ID             = "idActu";
+    private static final String ATT_TITRE          = "titre";
+    private static final String ATT_SOUS_TITRE     = "sousTitre";
+    private static final String ATT_TEXT           = "textActu";
+    private static final String ATT_TYPE           = "type";
 
     private ActusDao            actusDao;
     private List<Actus>         listActusAccueil;
@@ -41,13 +42,12 @@ public class ModifActusServlet extends HttpServlet {
         /* Récupération d'une instance de notre DAO Utilisateur */
         this.actusDao = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getActusDao();
         listActusAccueil = actusDao.getActusAccueil();
-        System.out.println( "INIT SERVLET ACTUS" );
     }
 
     @Override
     protected void doGet( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
-        System.out.println( "dans la methode get" );
+        System.out.println( "dans la servlet" );
         if ( request.getParameter( "search" ) != null )
             request.setAttribute( LIST_ACTUS,
                     listActusAccueil.stream()
@@ -57,6 +57,10 @@ public class ModifActusServlet extends HttpServlet {
         else
             request.setAttribute( LIST_ACTUS, listActusAccueil );
 
+        request.setAttribute( LIST_ACTUS_ACCUEIL,
+                listActusAccueil.stream().filter( a -> a.getPlacement() != 0 ).collect( Collectors.toList() ) );
+        System.out.println(
+                listActusAccueil.stream().filter( a -> a.getPlacement() != 0 ).collect( Collectors.toList() ) );
         this.getServletContext().getRequestDispatcher( TABLEAU_ACTU ).forward( request, response );
 
     }
@@ -64,7 +68,6 @@ public class ModifActusServlet extends HttpServlet {
     @Override
     protected void doPost( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
-        System.out.println( "dans la methode post" );
         SimpleDateFormat sf = new SimpleDateFormat( "dd-MM-yyyy" );
         Actus actu = new Actus();
         if ( request.getParameter( ATT_TYPE ).equals( "delete" ) ) {

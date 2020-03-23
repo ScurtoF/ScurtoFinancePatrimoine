@@ -111,6 +111,7 @@ public class ActusDao extends DAO<Actus> {
         actus.setTitre( result.getString( "titre" ) );
         actus.setTitreAccueil( result.getString( "titre_accueil" ) );
         actus.setText( result.getString( "text" ) );
+        actus.setPlacement( result.getInt( "placement" ) );
         return actus;
     }
 

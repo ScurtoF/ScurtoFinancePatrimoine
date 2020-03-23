@@ -37,6 +37,7 @@ public class RestrictionFilter implements Filter {
         mapPagePublic.put( "/contact.jsp", "contact" );
         mapPagePublic.put( "/presentation.jsp", "presentation" );
         mapPagePublic.put( "/liens-utiles.jsp", "liens-utiles" );
+        mapPagePublic.put( "/cv.html", "cv" );
         mapPagePublic.put( "/mention_legales.jsp", "mention_legales" );
         mapPagePublic.put( "/authenticate", "authenticate" );
         mapPagePublic.put( "/contact", "contact" );
@@ -76,7 +77,6 @@ public class RestrictionFilter implements Filter {
         } else if ( mapPagePrivate.containsKey( chemin ) && request.getSession().getAttribute( SESSION_LOG ) != null ) {
             request.setAttribute( PAGE, mapPagePrivate.get( chemin ) );
             chain.doFilter( request, response );
-
         } else {
             ActusDao actusDao = ( (DAOFactory) request.getServletContext().getAttribute( "daofactory" ) )
                     .getActusDao();
