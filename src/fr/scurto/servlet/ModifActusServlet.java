@@ -59,10 +59,7 @@ public class ModifActusServlet extends HttpServlet {
 
         request.setAttribute( LIST_ACTUS_ACCUEIL,
                 listActusAccueil.stream().filter( a -> a.getPlacement() != 0 ).collect( Collectors.toList() ) );
-        System.out.println(
-                listActusAccueil.stream().filter( a -> a.getPlacement() != 0 ).collect( Collectors.toList() ) );
         this.getServletContext().getRequestDispatcher( TABLEAU_ACTU ).forward( request, response );
-
     }
 
     @Override

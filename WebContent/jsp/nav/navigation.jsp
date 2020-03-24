@@ -19,11 +19,12 @@
 	<c:when test="${page == 'liens-utiles'}">
 		<c:set var="itemLiens" value="activate" />
 	</c:when>
-</c:choose>
-
+</c:choose>   
 <!-- Header -->
 <header id="header">
-	<a class="logo" href="index.jsp">Scurto Finance <span class="and">&amp;</span> Patrimoine</a>
+	<div>
+		<img style="height:50px;" src="images/heading-banner/logoScurtoF.png" alt="Scurto finance patrimoine"/>
+	</div>
 	<nav style="display:flex;">
 		<a href="#menu">Menu</a>
 		<span id="icon-connexion">
@@ -63,6 +64,6 @@
 </nav>
 <!-- Modal -->
 <c:import url="/jsp/modals/modal-connexion.jsp"/>
-<!-- 
-<script src="https://www.google.com/recaptcha/api.js?render=6LeO2scUAAAAANedX4uaOwkFSODqpzEsc1fWxFLR"></script> -->
-<script src="https://www.google.com/recaptcha/api.js?render=6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv"></script>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LeO2scUAAAAANedX4uaOwkFSODqpzEsc1fWxFLR"></script>
+<!-- LOCAL <script src="https://www.google.com/recaptcha/api.js?render=6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv"></script> -->

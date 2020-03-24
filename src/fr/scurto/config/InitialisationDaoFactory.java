@@ -11,7 +11,6 @@ import fr.scurto.dao.DAOFactory;
 public class InitialisationDaoFactory implements ServletContextListener {
 
     private static final String ATT_DAO_FACTORY = "daofactory";
-    private static final String ATT_CACHE_ACTUS = "cacheActus";
     private DAOFactory          daoFactory;
 
     @Override

@@ -43,7 +43,6 @@ section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; 
 }
 
 article, aside, details, figcaption, figure,
@@ -2471,7 +2470,7 @@ body {
   width: 100%;
   z-index: 10001; }
   #header > .logo {
-    font-family: 'Lobster', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: 'Gudea', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     color: #102e4d;
     font-size: 1rem;
     font-weight: 500;
@@ -2491,7 +2490,8 @@ body {
     color: inherit;
     display: inline-block;
     padding: 0 0.75rem;
-    text-decoration: none; }
+    text-decoration: none; 
+    }
     #header > nav > a:hover {
       color: #102e4d; }
     #header > nav > a[href="#menu"] {

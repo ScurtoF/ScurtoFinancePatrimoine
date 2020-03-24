@@ -14,9 +14,9 @@ import org.json.simple.parser.ParseException;
 
 public class ReCaptchaService {
 
-    // private static final String SECRET_KEY =
-    // "6LeO2scUAAAAAHOYabWfRFKqqSLZzuXljs-HQV0S";
-    private static final String SECRET_KEY_LOCAL      = "6LcKGckUAAAAACeSUIewr3xoNbgEeBIxLxmdR4HN";
+    private static final String SECRET_KEY            = "6LeO2scUAAAAAHOYabWfRFKqqSLZzuXljs-HQV0S";
+    // private static final String SECRET_KEY_LOCAL =
+    // "6LcKGckUAAAAACeSUIewr3xoNbgEeBIxLxmdR4HN";
     private static final String RECAPTCHA_SERVICE_URL = "https://www.google.com/recaptcha/api/siteverify";
 
     public static boolean isValid( String clientRecaptchaResponse ) throws IOException, ParseException {
@@ -31,7 +31,7 @@ public class ReCaptchaService {
         con.setRequestProperty( "Accept-Language", "en-US,en;q=0.5" );
 
         // add client result as post parameter
-        String postParams = "secret=" + SECRET_KEY_LOCAL +
+        String postParams = "secret=" + SECRET_KEY +
                 "&response=" + clientRecaptchaResponse;
         // String postParams = "secret=" + SECRET_KEY +
         // "&response=" + clientRecaptchaResponse;

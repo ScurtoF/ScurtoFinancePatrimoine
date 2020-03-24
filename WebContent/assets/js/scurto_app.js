@@ -25,23 +25,24 @@ function defilImg(){
 	document.getElementById('defil-img').src = arrImg[current_img++];
 }
 
-//grecaptcha.ready(function() {
-//	grecaptcha.execute('6LeO2scUAAAAANedX4uaOwkFSODqpzEsc1fWxFLR', {action: 'register'}).then(function(token) {
-//		var elms = document.getElementsByClassName('token');
-//        for (var i = 0; i < elms.length; i++) {
-//           elms[i].setAttribute("value", token);
-//        }
-//	});
-//});
-
 grecaptcha.ready(function() {
-	grecaptcha.execute('6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv', {action: 'register'}).then(function(token) {
-        var elms = document.getElementsByClassName('token');
+	grecaptcha.execute('6LeO2scUAAAAANedX4uaOwkFSODqpzEsc1fWxFLR', {action: 'register'}).then(function(token) {
+		var elms = document.getElementsByClassName('token');
         for (var i = 0; i < elms.length; i++) {
            elms[i].setAttribute("value", token);
         }
 	});
 });
+
+// LOCAL
+//grecaptcha.ready(function() {
+//	grecaptcha.execute('6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv', {action: 'register'}).then(function(token) {
+//        var elms = document.getElementsByClassName('token');
+//        for (var i = 0; i < elms.length; i++) {
+//           elms[i].setAttribute("value", token);
+//        }
+//	});
+//});
 
 function openModal(){
 	$('#connexionModalCenter').modal('show');
