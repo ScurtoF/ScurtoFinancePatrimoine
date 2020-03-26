@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.scurto.beans.Actus;
 import fr.scurto.dao.DAO;
@@ -13,13 +14,40 @@ import fr.scurto.dao.DAOFactory;
 
 public class ActusDao extends DAO<Actus> {
 
-    private static final String FIND_FIRST  = "SELECT * FROM scurto_bdd.news ORDER BY date";
-    private static final String UPDATE_ACTU = "UPDATE scurto_bdd.news SET date = ? , titre = ? , titre_accueil = ?, text = ?  WHERE id = ?";
-    private static final String INSERT_ACTU = "INSERT INTO scurto_bdd.news ( date , titre , titre_accueil, text, id_user ) VALUES ( ? , ? , ? , ? , ?  )";
-    private static final String REMOVE_ACTU = "DELETE FROM scurto_bdd.news WHERE id=?";
+    private static final String GET_ALL            = "SELECT * FROM scurto_bdd.news ORDER BY placement";
+    private static final String FIND_ACTUS_ACCUEIL = "SELECT * FROM scurto_bdd.news WHERE placement IS NOT NULL";
+    private static final String UPDATE_ACTU        = "UPDATE scurto_bdd.news SET date = ? , titre = ? , titre_accueil = ?, text = ?, placement = ?  WHERE id = ?";
+    private static final String INSERT_ACTU        = "INSERT INTO scurto_bdd.news ( date , titre , titre_accueil, text, id_user ) VALUES ( ? , ? , ? , ? , ?  )";
+    private static final String REMOVE_ACTU        = "DELETE FROM scurto_bdd.news WHERE id=?";
 
     public ActusDao( DAOFactory daoFactory ) {
         super( daoFactory );
+    }
+
+    public List<Actus> getAllActus() {
+        List<Actus> list = new ArrayList<>();
+        ResultSet result = null;
+        PreparedStatement state = null;
+        Connection con = null;
+        try {
+            con = daoFactory.getConnection();
+            state = initialisationRequetePreparee( con, GET_ALL, false );
+            result = state.executeQuery();
+            while ( result.next() ) {
+                Actus actus = map( result );
+                list.add( actus );
+            }
+        } catch ( SQLException ex ) {
+            ex.printStackTrace();
+        } finally {
+            fermeturesSilencieuses( result, state, con );
+        }
+        List<Actus> listActus = new ArrayList<>();
+        listActus.addAll( list.stream().filter( a -> ( a.getPlacement() != null && a.getPlacement() != 0 ) )
+                .collect( Collectors.toList() ) );
+        listActus.addAll( list.stream().filter( a -> ( a.getPlacement() == null || a.getPlacement() == 0 ) )
+                .collect( Collectors.toList() ) );
+        return listActus;
     }
 
     public List<Actus> getActusAccueil() {
@@ -29,12 +57,10 @@ public class ActusDao extends DAO<Actus> {
         Connection con = null;
         try {
             con = daoFactory.getConnection();
-            state = initialisationRequetePreparee( con, FIND_FIRST, false );
+            state = initialisationRequetePreparee( con, FIND_ACTUS_ACCUEIL, false );
             result = state.executeQuery();
             while ( result.next() ) {
                 Actus actus = map( result );
-                // actus.setUserCreate( daoFactory.getUserDao().getUserById(
-                // result.getInt( "id_user" ), con ) );
                 list.add( actus );
             }
         } catch ( SQLException ex ) {
@@ -76,7 +102,7 @@ public class ActusDao extends DAO<Actus> {
         try {
             connexion = daoFactory.getConnection();
             state = initialisationRequetePreparee( connexion, UPDATE_ACTU, false, actu.getDate(),
-                    actu.getTitre(), actu.getTitreAccueil(), actu.getText(), actu.getId() );
+                    actu.getTitre(), actu.getTitreAccueil(), actu.getText(), actu.getPlacement(), actu.getId() );
             state.executeUpdate();
             return true;
         } catch ( SQLException e ) {

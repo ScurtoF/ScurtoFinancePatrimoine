@@ -48,6 +48,7 @@ public class AuthenticateServlet extends HttpServlet {
 
         try {
             if ( ReCaptchaService.isValid( request.getParameter( "captchatoken" ) ) ) {
+                System.out.println( "CAPTCHA VALID" );
                 User user = userDao.login( mail, password );
                 if ( user != null ) {
                     request.getSession().setAttribute( SESSION_LOG, user );
@@ -55,6 +56,8 @@ public class AuthenticateServlet extends HttpServlet {
                 } else {
                     response.getWriter().append( "No" );
                 }
+            } else {
+                System.out.println( "CAPTCHA NON VALID" );
             }
         } catch ( ParseException e ) {
             e.printStackTrace();

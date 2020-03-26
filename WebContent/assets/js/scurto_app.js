@@ -34,7 +34,7 @@ grecaptcha.ready(function() {
 	});
 });
 
-// LOCAL
+////LOCAL
 //grecaptcha.ready(function() {
 //	grecaptcha.execute('6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv', {action: 'register'}).then(function(token) {
 //        var elms = document.getElementsByClassName('token');
@@ -154,6 +154,7 @@ function validateForm() {
    	$('#status').css('color', '#fcb10ce0');
    	document.getElementById('status').innerHTML = "Envoi en cours";
    
+   	
 	$.ajax({
 		type: 'POST',
 		url: 'contact',

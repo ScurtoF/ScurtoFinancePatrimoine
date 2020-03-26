@@ -2,13 +2,13 @@ package fr.scurto.beans;
 
 public class Actus {
 
-    private int    id;
-    private String titre;
-    private String titreAccueil;
-    private String date;
-    private String text;
-    private User   userCreate;
-    private int    placement;
+    private int     id;
+    private String  titre;
+    private String  titreAccueil;
+    private String  date;
+    private String  text;
+    private User    userCreate;
+    private Integer placement;
 
     public int getId() {
         return id;
@@ -58,11 +58,11 @@ public class Actus {
         this.userCreate = userCreate;
     }
 
-    public int getPlacement() {
+    public Integer getPlacement() {
         return placement;
     }
 
-    public void setPlacement( int placement ) {
+    public void setPlacement( Integer placement ) {
         this.placement = placement;
     }
 

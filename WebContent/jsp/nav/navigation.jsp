@@ -66,4 +66,4 @@
 <c:import url="/jsp/modals/modal-connexion.jsp"/>
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LeO2scUAAAAANedX4uaOwkFSODqpzEsc1fWxFLR"></script>
-<!-- LOCAL <script src="https://www.google.com/recaptcha/api.js?render=6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv"></script> -->
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv"></script> -->

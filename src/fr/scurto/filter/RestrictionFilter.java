@@ -2,6 +2,7 @@ package fr.scurto.filter;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.Filter;
@@ -14,6 +15,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.scurto.beans.Actus;
 import fr.scurto.dao.DAOFactory;
 import fr.scurto.dao.imp.ActusDao;
 
@@ -69,7 +71,8 @@ public class RestrictionFilter implements Filter {
             if ( chemin.equals( "/index.jsp" ) ) {
                 ActusDao actusDao = ( (DAOFactory) request.getServletContext().getAttribute( "daofactory" ) )
                         .getActusDao();
-                request.setAttribute( "actus", actusDao.getActusAccueil() );
+                List<Actus> list = actusDao.getActusAccueil();
+                request.setAttribute( "actus", list );
             }
             request.setAttribute( PAGE, mapPagePublic.get( chemin ) );
             chain.doFilter( request, response );

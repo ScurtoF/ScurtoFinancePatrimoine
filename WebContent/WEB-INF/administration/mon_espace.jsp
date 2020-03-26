@@ -141,11 +141,26 @@
 	   		$('#status-'+id).css('color', '#ff0000c2');
 	   	    document.getElementById('status-'+id).innerHTML = "Le champ text ne doit pas être vide";
 	   	    return false;
-	   	}	
-		$.ajax({
+	   	}
+
+		var visibility = document.getElementById('visibility-'+id);
+		var place = "0";
+		if( visibility.checked ){
+		   	place = document.getElementById('place-'+id).value;
+		   	if (place == "") {
+				place = "0";
+		   	}
+		}
+	   	console.log(place)
+	   /* 	if (place == "") {
+	   		$('#status-'+id).css('color', '#ff0000c2');
+	   	    document.getElementById('status-'+id).innerHTML = "Le champ text ne doit pas être vide";
+	   	    return false;
+	   	}		 */
+ 		$.ajax({
 			type: 'POST',
 			url: 'modification-actu',
-			data: { idActu: id , titre: titre, sousTitre:sousTitre, textActu:text , type:'modification'},
+			data: { idActu: id , titre: titre, sousTitre:sousTitre, textActu:text , placement:place, type:'modification'},
 			timeout:20000,
 			success: function(data){
 				if(data == 'success'){
@@ -190,7 +205,7 @@
 	}
 	
 	function reloadActu(){
-		console.log("");
+		console.log("dans le reload actus")
 		var search =  document.getElementById('recherche').value;	
 		setTimeout(function(){
 	   		$('#table').load("modification-actu?search="+search);

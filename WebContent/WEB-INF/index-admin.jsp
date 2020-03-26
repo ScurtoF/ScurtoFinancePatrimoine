@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Lobster&amp;display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Gudea&display=swap" rel="stylesheet">
-	</head>
+	</head> 
 	<body class="is-preload">
 		<c:import url="/jsp/nav/navigation.jsp" />
 		<%-- <c:import url="/banner-compte.jsp"/> --%>
