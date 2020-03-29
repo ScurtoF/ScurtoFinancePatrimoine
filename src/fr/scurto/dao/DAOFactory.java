@@ -46,7 +46,6 @@ public final class DAOFactory {
         } else {
 
             try {
-
                 properties.load( fichierProperties );
                 url = properties.getProperty( PROPERTY_URL );
                 driver = properties.getProperty( PROPERTY_DRIVER );
@@ -72,9 +71,9 @@ public final class DAOFactory {
                 config.setUsername( nomUtilisateur );
                 config.setPassword( motDePasse );
                 /* Paramétrage de la taille du pool */
-                config.setMinConnectionsPerPartition( 5 );
+                config.setMinConnectionsPerPartition( 1 );
                 config.setMaxConnectionsPerPartition( 10 );
-                config.setPartitionCount( 5 );
+                config.setPartitionCount( 2 );
                 /*
                  * Création du pool à partir de la configuration, via l'objet
                  * BoneCP
@@ -88,7 +87,6 @@ public final class DAOFactory {
              * Enregistrement du pool créé dans une variable d'instance via un
              * appel au constructeur de DAOFactory
              */
-
             DAOFactory instance = new DAOFactory( connectionPool );
             return instance;
         }

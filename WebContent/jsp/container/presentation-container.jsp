@@ -26,7 +26,7 @@
 										alt="Frédéric Scurto, agent générale axa">
 									<article>
 										<h4>Frédéric SCURTO</h4>
-										<p class="text-muted">Responsable d'agence</p>
+										<p class="text-muted">Agent général d'agence</p>
 										<ul class="list-inline social-buttons">
 											<li class="list-inline-item"><a
 												href="https://www.facebook.com/profile.php?id=100014339559445"><i
@@ -92,12 +92,6 @@
 										<h4>Michael Azoulay</h4>
 										<p class="text-muted">Inspecteur AXA Prévoyance &amp;
 											Patrimoine</p>
-										<ul class="list-inline social-buttons">
-											<li class="list-inline-item"><a
-												href="https://www.linkedin.com/in/michael-azoulay-40a06ab1/">
-													<i class="icon fa-linkedin">&nbsp;</i>
-											</a></li>
-										</ul>
 									</article>
 								</div>
 								<div class="hov">
@@ -105,12 +99,6 @@
 										<h4>Michael Azoulay</h4>
 										<p class="text-muted">Inspecteur AXA Prévoyance &amp;
 											Patrimoine</p>
-										<ul class="list-inline social-buttons">
-											<li class="list-inline-item"><a
-												href="https://www.linkedin.com/in/michael-azoulay-40a06ab1/">
-													<i class="icon fa-linkedin">&nbsp;</i>
-											</a></li>
-										</ul>
 									</article>
 								</div>
 							</div>

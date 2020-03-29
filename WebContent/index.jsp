@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<title>Scurto Finance &amp; Patrimoine</title>
+		<title>Scurto Finance Patrimoine</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="Scurto frédéric finance et patrimoine" />
@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Lobster&amp;display=swap" rel="stylesheet">
+		<link rel="shortcut icon" type="image/x-icon" href="/icon/favicon.ico" />
 	</head>
 	<body class="is-preload">
 		<c:import url="/jsp/nav/navigation.jsp" />

@@ -2,7 +2,6 @@ package fr.scurto.filter;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.Filter;
@@ -15,9 +14,9 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.scurto.beans.Actus;
 import fr.scurto.dao.DAOFactory;
 import fr.scurto.dao.imp.ActusDao;
+import fr.scurto.utils.ActualiteCache;
 
 @WebFilter( filterName = "RestrictionFilter", urlPatterns = "/*" )
 public class RestrictionFilter implements Filter {
@@ -39,10 +38,12 @@ public class RestrictionFilter implements Filter {
         mapPagePublic.put( "/contact.jsp", "contact" );
         mapPagePublic.put( "/presentation.jsp", "presentation" );
         mapPagePublic.put( "/liens-utiles.jsp", "liens-utiles" );
+        mapPagePublic.put( "/actualites.jsp", "actualites" );
         mapPagePublic.put( "/cv.html", "cv" );
         mapPagePublic.put( "/mention_legales.jsp", "mention_legales" );
         mapPagePublic.put( "/authenticate", "authenticate" );
         mapPagePublic.put( "/contact", "contact" );
+        mapPagePublic.put( "/actualites", "actualites" );
 
         mapPagePrivate = new HashMap<>();
         mapPagePrivate.put( "/monEspace", "monEspace" );
@@ -66,13 +67,13 @@ public class RestrictionFilter implements Filter {
             chain.doFilter( request, response );
             return;
         }
+        System.out.println( chemin );
 
         if ( mapPagePublic.containsKey( chemin ) ) {
             if ( chemin.equals( "/index.jsp" ) ) {
                 ActusDao actusDao = ( (DAOFactory) request.getServletContext().getAttribute( "daofactory" ) )
                         .getActusDao();
-                List<Actus> list = actusDao.getActusAccueil();
-                request.setAttribute( "actus", list );
+                request.setAttribute( "actus", ActualiteCache.getActusAccueil( actusDao ) );
             }
             request.setAttribute( PAGE, mapPagePublic.get( chemin ) );
             chain.doFilter( request, response );
@@ -83,7 +84,7 @@ public class RestrictionFilter implements Filter {
         } else {
             ActusDao actusDao = ( (DAOFactory) request.getServletContext().getAttribute( "daofactory" ) )
                     .getActusDao();
-            request.setAttribute( "actus", actusDao.getActusAccueil() );
+            request.setAttribute( "actus", ActualiteCache.getActusAccueil( actusDao ) );
             req.getRequestDispatcher( "/index.jsp" ).forward( req, resp );
             request.setAttribute( PAGE, mapPagePublic.get( "index" ) );
         }

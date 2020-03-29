@@ -12,15 +12,15 @@
 		<div style="padding: 20px;">
 			<h5><c:out value="${ user.getCompleteName() }"/></h5>
 			<p><c:out value="${ user.email}"/></p>
-		<!-- 	<button class="gerer-compte"><p>Gérer votre compte</p></button> -->
+			<!-- 	<button class="gerer-compte"><p>Gérer votre compte</p></button> -->
 			<hr/>
-			<a href="monEspace" class="button-action">
+			<button id="monEspace" class="button-action" onclick="RedirectionJs('monEspace')">
 				Gérer les actualités
-			</a>
-			<button class="button-action">
+			</button>
+			<button class="button-action" disabled="disabled">
 				Gérer les événement
 			</button>
-			<button class="button-action">
+			<button class="button-action" disabled="disabled">
 				Gérer les demandes
 			</button>
 		</div>

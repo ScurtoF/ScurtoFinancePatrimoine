@@ -18,7 +18,7 @@
 			<header>
 				<h2>FRÉDÉRIC SCURTO</h2>
 			</header>
-			<p>Agent Général d’Assurance Exclusif AXA PREVOYANCE & PATRIMOINE</p>
+			<p>Agent Général d’Assurance Exclusif AXA PREVOYANCE &amp; PATRIMOINE</p>
 			<div class="no-space">
 				<p>Mandataire exclusif en opérations de banque et Agent lié
 					d’AXA Banque</p>

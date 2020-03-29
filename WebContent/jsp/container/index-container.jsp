@@ -21,7 +21,7 @@
 				</c:if>
 				<div class="carousel-item ${ active }">
 					<section class="banner" id="banner${ i }">
-						<div class="inner">
+						<div onclick="RedirectionActuJs(this);" style="cursor: pointer;" class="inner" id="${ actu.id }">
 							<h1><c:out value="${ actu.titre }"/></h1>
 							<p><c:out value="${ actu.titreAccueil }"/></p>
 						</div>
@@ -32,7 +32,9 @@
 		</div>
 	</div>
 </div>
-
+<script>
+	
+</script>
 <!-- Highlights -->
 <section class="wrapper">
 	<div class="inner">
@@ -121,7 +123,7 @@
 					<p>Demandez votre Bilan qui vous permettra de connaître précisement votre situation actuelle"Sociale et Patrimoniale".
 							Comme eux, vous pourrez alors prendre les bonnes décisions pour sécuriser votre Entreprise et protéger votre Famille.
 							Votre Protection, votre Avenir, votre Réussite : cela nous concerne, c'est  notre métier.
-							100 % de nos clients sont satisfaits du service que nous leur apportons et de notre présence à leur côté, au quotidien et dans chaque difficulté..</p>
+							100 % de nos clients sont satisfaits du service que nous leur apportons et de notre présence à leur côté, au quotidien et dans chaque difficulté.</p>
 				</div>
 				<div class="container-projet image-projet max-size">
 						<img alt="Assureur Scurto Frédéric" src="images/equipe1.jpg"/>

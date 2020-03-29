@@ -15,7 +15,7 @@ import fr.scurto.dao.DAOFactory;
 public class ActusDao extends DAO<Actus> {
 
     private static final String GET_ALL            = "SELECT * FROM scurto_bdd.news ORDER BY placement";
-    private static final String FIND_ACTUS_ACCUEIL = "SELECT * FROM scurto_bdd.news WHERE placement IS NOT NULL";
+    private static final String FIND_ACTUS_ACCUEIL = "SELECT * FROM scurto_bdd.news WHERE placement != 0 ORDER BY placement";
     private static final String UPDATE_ACTU        = "UPDATE scurto_bdd.news SET date = ? , titre = ? , titre_accueil = ?, text = ?, placement = ?  WHERE id = ?";
     private static final String INSERT_ACTU        = "INSERT INTO scurto_bdd.news ( date , titre , titre_accueil, text, id_user ) VALUES ( ? , ? , ? , ? , ?  )";
     private static final String REMOVE_ACTU        = "DELETE FROM scurto_bdd.news WHERE id=?";

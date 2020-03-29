@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<title>Scurto Finance &amp; Patrimoine</title>
+<title>Scurto Finance Patrimoine</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="description" content="Scurto frédéric finance et patrimoine" />
@@ -51,7 +51,7 @@
 	<div class="modal fade" id="ajout-actu" tabindex="-1"
 		role="dialog" aria-labelledby="ajouterActualité"
 		aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div style="max-width: 700px; margin: 60px auto;" class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">Ajouter une actualité</h5>

@@ -15,10 +15,13 @@ import org.json.simple.parser.ParseException;
 public class ReCaptchaService {
 
     private static final String SECRET_KEY            = "6LeO2scUAAAAAHOYabWfRFKqqSLZzuXljs-HQV0S";
-    private static final String SECRET_KEY_LOCAL      = "6LcKGckUAAAAACeSUIewr3xoNbgEeBIxLxmdR4HN";
+    // private static final String SECRET_KEY_LOCAL =
+    // "6LcKGckUAAAAACeSUIewr3xoNbgEeBIxLxmdR4HN";
     private static final String RECAPTCHA_SERVICE_URL = "https://www.google.com/recaptcha/api/siteverify";
 
     public static boolean isValid( String clientRecaptchaResponse ) throws IOException, ParseException {
+        // System.out.println( "clientRecaptchaResponse == " +
+        // clientRecaptchaResponse );
         if ( clientRecaptchaResponse == null || "".equals( clientRecaptchaResponse ) ) {
             return false;
         }

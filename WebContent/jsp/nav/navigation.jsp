@@ -6,6 +6,7 @@
 <c:set var="itemPros" value=""/>
 <c:set var="itemEntreprises" value="" />
 <c:set var="itemLiens" value="" />
+<c:set var="itemActualites" value="" />
 <c:choose>
 	<c:when test="${page == 'index'}">
 		<c:set var="itemAccueil" value="activate"/>
@@ -19,11 +20,14 @@
 	<c:when test="${page == 'liens-utiles'}">
 		<c:set var="itemLiens" value="activate" />
 	</c:when>
+	<c:when test="${page == 'actualites'}">
+		<c:set var="itemActualites" value="activate" />
+	</c:when>
 </c:choose>   
 <!-- Header -->
 <header id="header">
-	<div>
-		<img style="height:50px;" src="images/heading-banner/logoScurtoF.png" alt="Scurto finance patrimoine"/>
+	<div onclick="RedirectionIndex();" style="cursor: pointer">
+		<img style="height:50px;padding:5px;" src="images/heading-banner/logoScurtoF.png" alt="Scurto finance patrimoine"/>
 	</div>
 	<nav style="display:flex;">
 		<a href="#menu">Menu</a>
@@ -58,7 +62,7 @@
 			</div>
 		</li>
 		<li><a href="construction.jsp">Particuliers</a></li>
-		<li><a href="construction.jsp">Actualités</a></li>
+		<li><a class="${ itemActualites }" href="actualites">Actualités</a></li>
 		<li class="${ itemLiens }"><a  href="liens-utiles.jsp">Liens utiles</a></li>
 	</ul>
 </nav>
@@ -66,4 +70,29 @@
 <c:import url="/jsp/modals/modal-connexion.jsp"/>
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LeO2scUAAAAANedX4uaOwkFSODqpzEsc1fWxFLR"></script>
-<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv"></script> -->
+<script>
+	function RedirectionJs(str){
+      	document.location.href="https://scurto.fr/"+str;
+     }
+     function RedirectionActuJs(elt){
+     	var idActu = $(elt).attr('id');
+     	document.location.href="https://scurto.fr/actualites?actu="+idActu;
+     }
+     function RedirectionIndex(){
+ 		document.location.href="https://scurto.fr/";
+	}
+</script>
+
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv"></script>
+<script>
+	function RedirectionIndex(){
+ 		document.location.href="http://localhost:8080/ScurtoFinancePatrimoine/";
+	}
+	function RedirectionJs(str){
+ 		document.location.href="http://localhost:8080/ScurtoFinancePatrimoine/"+str;
+	}
+	 function RedirectionActuJs(elt){
+		var idActu = $(elt).attr('id');
+     	document.location.href="http://localhost:8080/ScurtoFinancePatrimoine/actualites?actu="+idActu;
+     }
+</script> -->

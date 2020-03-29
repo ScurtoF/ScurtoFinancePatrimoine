@@ -40,7 +40,7 @@
 			<div class="modal fade" id="actu-${actu.id}" tabindex="-1"
 				role="dialog" aria-labelledby="exampleModalLabel"
 				aria-hidden="true">
-				<div class="modal-dialog" role="document">
+				<div style="max-width: 700px; margin: 60px auto;" class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title">Modification actualité</h5>
@@ -52,17 +52,23 @@
 						</div>
 						<div class="modal-body">
 							<form>
-								<input type="text" id="titre-${actu.id}"
-									name="titre-${actu.id}" required minlength="0" maxlength="64" size="50" value="${ actu.titre }">
-								<label for="titre-${actu.id}">Titre</label> 
-								<input type="text" id="sous-titre-${actu.id}"
-									name="sous-titre-${actu.id}" required minlength="0" maxlength="64" size="50" value="${ actu.titreAccueil }">
-								<label for="sous-titre-${actu.id}">Sous-titre accueil</label>
-								<textarea id="text-actus-${actu.id}" name="text-actus-${actu.id}" rows="10" maxlength="600" class="form-control md-textarea"><c:out value="${actu.text}"/></textarea>
-			                    <label for="text-actus-${actu.id}">Text ( 600 caractères maximum )</label>
+								<div style="display:flex">
+									<div style="padding-right: 30px;">
+										<input type="text" id="titre-${actu.id}"
+											name="titre-${actu.id}" required minlength="0" maxlength="64" size="50" value="${ actu.titre }">
+										<label for="titre-${actu.id}">Titre</label>
+									</div>
+									<div>
+										<input type="text" id="sous-titre-${actu.id}"
+											name="sous-titre-${actu.id}" required minlength="0" maxlength="64" size="50" value="${ actu.titreAccueil }">
+										<label for="sous-titre-${actu.id}">Sous-titre accueil</label>
+									</div>
+								</div>
+								<textarea id="text-actus-${actu.id}" name="text-actus-${actu.id}" rows="7" maxlength="3000" class="form-control md-textarea"><c:out value="${actu.text}"/></textarea>
+			                    <label for="text-actus-${actu.id}">Text ( 3000 caractères maximum )</label>
 			                	<div style="display:flex; padding:20px;" >
 			                		<c:choose>
-				                		<c:when test="${ actu.placement != null }">
+				                		<c:when test="${ actu.placement != null && actu.placement != 0 }">
 					                		<input onclick="changeVisibility(this);" id="visibility-${actu.id}" style="-webkit-appearance: checkbox;opacity:1;" type="checkbox" checked/>
 					                		<label for="visibility-${actu.id}">Visible sur l'accueil</label>
 					                	</c:when>
@@ -74,7 +80,7 @@
 			                	</div>
 		                		<div>
 			                		<c:choose>
-				                		<c:when test="${ actu.placement != null }">
+				                		<c:when test="${ actu.placement != null && actu.placement != 0 }">
 				                			<select name="" id="place-${actu.id}">
 					                			<c:set var="nb" value="0"/>
 												<option value="0"><c:out value=""/></option>
@@ -89,7 +95,7 @@
 									       </select>
 								      	</c:when>
 			                			<c:otherwise>
-							           		<select name="" id="place-${actu.id}">
+							           		<select name="Position" id="place-${actu.id}" disabled="disabled"> 
 					                			<c:set var="nb" value="0"/>
 												<option value="0"><c:out value=""/></option>
 					               				<c:forEach var="actu_accueil" items="${actus_accueil}">
