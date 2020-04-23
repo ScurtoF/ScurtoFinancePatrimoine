@@ -4,7 +4,7 @@
     
 <!-- Heading -->
 <div id="heading-professionnels" class="actualites" >
-    <h1>Acutalités</h1>
+    <h1>>Les Actualités</h1>
 </div>
 
 <!-- Rapid nav -->
@@ -16,11 +16,6 @@
 <section id="main" class="wrapper">
     <div class="inner">
         <div class="content"> 
-            <header>
-                <h2>Les Actualités</h2>
-            </header>
-            <p>Certains secteurs d'activité doivent souscrire une assurance professionnelle obligatoire, mais aucune entreprise n'est à l'abri de risques liés à son activité, il est donc important de souscrire une assurance entreprise.
-                    Cette assurance permet de couvrir les risques qui ne peuvent pas être supportés par la trésorerie de l'entreprise et qui pourraient entrainer la faillite de l'entreprise.</p>
             <form>
             	<label for="choiceActus">Choix actualités : </label>
             	<select id="actu" name="choiceActus" onchange="changeActus(this);" id="choice">

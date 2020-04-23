@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.parser.ParseException;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import fr.scurto.beans.User;
 import fr.scurto.dao.DAOFactory;
@@ -35,32 +36,39 @@ public class AuthenticateServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet( HttpServletRequest request, HttpServletResponse response )
+    public void doGet( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
         this.getServletContext().getRequestDispatcher( DIV_RETOUR ).forward( request, response );
     }
 
     @Override
-    protected void doPost( HttpServletRequest request, HttpServletResponse response )
+    public void doPost( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
-        String mail = request.getParameter( "mail" );
-        String password = SecurityService.getHashCode( request.getParameter( "password" ) );
-
         try {
-            if ( ReCaptchaService.isValid( request.getParameter( "captchatoken" ) ) ) {
-                System.out.println( "CAPTCHA VALID" );
-                User user = userDao.login( mail, password );
-                if ( user != null ) {
-                    request.getSession().setAttribute( SESSION_LOG, user );
-                    response.getWriter().append( "valide" );
+            JsonObject data = new Gson().fromJson( request.getReader(), JsonObject.class );
+            response.setContentType( "text/plain" );
+            response.setCharacterEncoding( "UTF-8" );
+            String mail = data.get( "mail" ).getAsString();
+            String password = SecurityService.getHashCode( data.get( "password" ).getAsString() );
+            if ( mail != null && password != null ) {
+                if ( ReCaptchaService.isValid( data.get( "captchatoken" ).getAsString() ) ) {
+                    // if ( true ) {
+                    User user = userDao.login( mail, password );
+                    if ( user != null ) {
+                        request.getSession().setAttribute( SESSION_LOG, user );
+                        response.getWriter().append( "valide" );
+                    } else {
+                        response.getWriter().append( "No" );
+                    }
                 } else {
                     response.getWriter().append( "No" );
                 }
             } else {
-                System.out.println( "CAPTCHA NON VALID" );
+                response.getWriter().append( "No" );
             }
-        } catch ( ParseException e ) {
+        } catch ( Exception e ) {
             e.printStackTrace();
+            response.getWriter().append( "No" );
         }
     }
 

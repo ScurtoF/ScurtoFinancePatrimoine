@@ -26,7 +26,7 @@
 										alt="Frédéric Scurto, agent générale axa">
 									<article>
 										<h4>Frédéric SCURTO</h4>
-										<p class="text-muted">Agent général d'agence</p>
+										<p class="text-muted">Agent général exclusif AXA Prévoyance et Patrimoine</p>
 										<ul class="list-inline social-buttons">
 											<li class="list-inline-item"><a
 												href="https://www.facebook.com/profile.php?id=100014339559445"><i
@@ -40,7 +40,7 @@
 								<div class="hov">
 									<article>
 										<h4>Frédéric SCURTO</h4>
-										<p class="text-muted">Responsable d'agence</p>
+										<p class="text-muted">Agent général exclusif AXA Prévoyance et Patrimoine</p>
 										<ul class="list-inline social-buttons">
 											<li class="list-inline-item"><a
 												href="https://www.facebook.com/profile.php?id=100014339559445"><i

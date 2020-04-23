@@ -10,11 +10,11 @@
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<div class="modal-body">
-			    <div class="row justify-content-md-center">
-			        <!--Grid column-->
-			        <div class="col-md-10">
-			            <form id="contact-form" name="contact-form" method="POST">
+	    	<form>
+				<div class="modal-body">
+				    <div class="row justify-content-md-center">
+				        <!--Grid column-->
+				        <div class="col-md-10">
 			                <!--Grid row-->
 			                <div class="row">
 			                    <!--Grid column-->
@@ -29,25 +29,25 @@
 			                    <!--Grid column-->
 			                    <div class="col-md-11">
 			                        <div class="md-form mb-0">
-			                            <input type="password" id="passConnexion" name="pass">
-			                            <label for="pass" class="">Password</label>
+			                            <input type="password" id="passConnexion" name="password">
+			                            <label for="password" class="">Password</label>
 			                        </div>
 			                    </div>
 			                </div>
-			                <input id="token-connexion" type="hidden" class="token" name="token" value=""/>
-			            </form>
-			            <div id="messageConnexion"></div>
+			                <input id="token-connexion" type="hidden" class="token" name="captcha-token" value=""/>
+				            <div id="messageConnexion"></div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="modal-footer">
-	            <div class="text-center text-md-left">
-	            	<button type="button" class="closed-modal" 
-						data-dismiss="modal">Fermer</button>
-	                <button id="btn-connexion" class="send-connexion"
-						onclick="connexionForm();">Envoi</button>
-	            </div>
-	        </div>
+				<div class="modal-footer">
+		            <div class="text-center text-md-left">
+		            	<button type="button" class="closed-modal" 
+							data-dismiss="modal">Fermer</button>
+		                <button id="btn-connexion" class="send-connexion"
+							onclick="connexionForm();return false;">Envoi</button>
+		            </div>
+		        </div>
+	        </form>
 		</div>
 	</div>
 </div>

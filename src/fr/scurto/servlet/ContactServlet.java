@@ -68,8 +68,11 @@ public class ContactServlet extends HttpServlet {
                 message.setRecipients( Message.RecipientType.TO,
                         InternetAddress.parse( EMAIL_TO ) );
                 message.setSubject( "Contact site : " + request.getParameter( "mail" ) );
-                message.setText( request.getParameter( "message" ) + "\nInformation : " + request.getParameter( "nom" )
-                        + "-" + request.getParameter( "prenom" ) + "\nTelephone : " + request.getParameter( "tel" ) );
+
+                message.setText( request.getParameter( "message" ) + "\nInformation : "
+                        + request.getParameter( "nom" )
+                        + "-" + request.getParameter( "prenom" )
+                        + "\nTelephone : " + request.getParameter( "tel" ) );
                 // Etape 3 : Envoyer le message
                 response.getWriter().write( "Message envoyé" );
                 Transport.send( message );

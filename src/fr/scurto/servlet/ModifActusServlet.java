@@ -59,7 +59,10 @@ public class ModifActusServlet extends HttpServlet {
             throws ServletException, IOException {
         SimpleDateFormat sf = new SimpleDateFormat( "dd-MM-yyyy" );
         Actus actu = new Actus();
-        if ( request.getParameter( ATT_TYPE ).equals( "delete" ) ) {
+        String requestType = "";
+        if ( request.getParameter( ATT_TYPE ) != null )
+            requestType = request.getParameter( ATT_TYPE );
+        if ( requestType.equals( "delete" ) ) {
             actu.setId( Integer.parseInt( request.getParameter( ATT_ID ) ) );
             if ( ActualiteCache.deleteActu( actu, actusDao ) ) {
                 response.getWriter().append( "success" );
@@ -76,7 +79,7 @@ public class ModifActusServlet extends HttpServlet {
                 actu.setPlacement( Integer.parseInt( request.getParameter( ATT_PLACEMENT ) ) );
             actu.setDate( sf.format( new Date() ) );
             // PLACEMENT
-            if ( request.getParameter( ATT_TYPE ).equals( "ajout-actu" ) ) {
+            if ( requestType.equals( "ajout-actu" ) ) {
                 if ( ActualiteCache.createActu( actu, actusDao ) ) {
                     response.getWriter().append( "success" );
                 } else

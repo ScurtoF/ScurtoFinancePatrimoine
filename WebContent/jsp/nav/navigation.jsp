@@ -70,29 +70,4 @@
 <c:import url="/jsp/modals/modal-connexion.jsp"/>
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LeO2scUAAAAANedX4uaOwkFSODqpzEsc1fWxFLR"></script>
-<script>
-	function RedirectionJs(str){
-      	document.location.href="https://scurto.fr/"+str;
-     }
-     function RedirectionActuJs(elt){
-     	var idActu = $(elt).attr('id');
-     	document.location.href="https://scurto.fr/actualites?actu="+idActu;
-     }
-     function RedirectionIndex(){
- 		document.location.href="https://scurto.fr/";
-	}
-</script>
-
-<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv"></script>
-<script>
-	function RedirectionIndex(){
- 		document.location.href="http://localhost:8080/ScurtoFinancePatrimoine/";
-	}
-	function RedirectionJs(str){
- 		document.location.href="http://localhost:8080/ScurtoFinancePatrimoine/"+str;
-	}
-	 function RedirectionActuJs(elt){
-		var idActu = $(elt).attr('id');
-     	document.location.href="http://localhost:8080/ScurtoFinancePatrimoine/actualites?actu="+idActu;
-     }
-</script> -->
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LcKGckUAAAAAN0ApZ0gAFdEkMVxmGZ-TViLLPkv"></script> -->
